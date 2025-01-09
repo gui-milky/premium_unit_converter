@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@source "/views/widgets";
+@source "/views";
+
+@theme {
+    --font-lexend: "Lexend", "sans-serif";
+}
+
+.btn-normal {
+    @apply cursor-pointer bg-blue-500 text-white px-6 py-2 rounded-lg
+    border-blue-600 hover:brightness-110;
+}
+
+.btn-grey {
+    @apply cursor-pointer bg-slate-300 text-slate-600 px-6 py-2 rounded-lg
+    border-slate-800 hover:brightness-110;
+}
+
+.nav-link {
+    @apply border-b-2 hover:border-slate-500 inline-block px-2 py-1;
+}

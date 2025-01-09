@@ -1,0 +1,31 @@
+<div id="converter" class="container max-w-80 mx-auto">
+    <div class="mt-5">
+        <p class="indent-1 text-slate-600 mb-1">Convert Weight</p>
+        <form id="convert-form" method="POST" hx-post="/weight" hx-target="#result-box">
+        
+        <input type="text" name="value" class="border-2 border-gray-300 p-2 rounded-lg w-full" placeholder="Enter unit to convert" required>
+        <p id="error-info"></p>
+        
+        <label class="mt-3 inline-block text-slate-600" for="first-unit">From:</label>
+        <select data-prev-Unit="g" id="first-unit" name="firstUnit" form="convert-form" class="cursor-pointer bg-slate-100 rounded">
+            <option value="g" selected="selected">Gram</option>
+            <option value="mg">Miligram</option>
+            <option value="kg">Kilogram</option>
+            <option value="ounce">Ounce</option>
+            <option value="pound">Pound</option>
+        </select>
+
+        <label class="ml-3 text-slate-600" for="sec-unit">To:</label>
+        <select data-prev-Unit="kg" id="sec-unit" name="secUnit" form="convert-form" class="cursor-pointer bg-slate-100 rounded">
+            <option value="g">Gram</option>
+            <option value="mg">Miligram</option>
+            <option value="kg" selected="selected">Kilogram</option>
+            <option value="ounce">Ounce</option>
+            <option value="pound">Pound</option>
+        </select>
+
+        <button type="submit" class="btn-normal mt-3">
+        Convert</button>
+        </form>
+    </div>
+</div>

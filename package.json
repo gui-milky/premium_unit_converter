@@ -1,0 +1,23 @@
+{
+  "name": "unit_converter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --experimental-sqlite --env-file=.env index.js",
+    "css": "npx @tailwindcss/cli -i input.css -o public/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.0-beta.8",
+    "ejs": "^3.1.10",
+    "express": "^5.0.1",
+    "express-session": "^1.18.1",
+    "stripe": "^17.5.0",
+    "tailwindcss": "^4.0.0-beta.8"
+  }
+}

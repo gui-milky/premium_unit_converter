@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('header.ejs', {title: "Payment Failed"}) %>
+<body class="font-lexend">
+    <h1 class="text-center mt-3"><a href="/">JBZ Converter</a></h1>
+    <section class="container max-w-80 mx-auto mt-10 text-center">
+        <img class="inline" src="/cancel.png" alt="true" width="100px">
+        <p>Payment failed.<br> You will be redirected to home page soon.</p>
+        <a href="/" class="underline text-sm">Click Here to Redirect</a>
+    </section>
+    <script src="/script.js"></script>
+    <script>redirectTimer("/", 5000)</script>
+</body>
+</html>
