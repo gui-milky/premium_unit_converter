@@ -3,9 +3,9 @@
     <%- include('header.ejs', {title: "Upgrade Premium"}) %>
 <body class="font-lexend">
     <h1 class="text-center mt-3"><a href="/">JBZ Converter</a></h1>
-    <main class="container max-w-80 mx-auto mt-6">
+    <main class="container max-w-80 mx-auto mt-6" hx-indicator="#spinner">
         <h2 class="px-2 mb-2">Check Out</h2>
-        <form hx-post="/upgrade" hx-target="#error-info" class="flex flex-col">
+        <form hx-post="/upgrade" hx-target="#error-info" class="flex flex-col relative">
             
             <div class="flex justify-between w-full mx-auto mb-2">
                 <p class="font-bold inline-block w-full px-3 py-3 bg-slate-200">One Time Payment</p>
@@ -17,6 +17,7 @@
             <input class="border-1 border-slate-300 py-1 px-1 rounded mb-2" type="password" name="password" placeholder="Password">
             <button type="submit" class="btn-normal">Check Out</button>
             <a class="btn-grey text-center mt-2" href="/">Back</a>
+            <img class="htmx-indicator -z-10 absolute top-1/2 left-28" src="loading.svg" alt="loading" width="100px" id="spinner">
         </form>
         <p class="text-sm mt-1 text-center">
             Username and password will be used for login.

@@ -39,11 +39,15 @@ export function clickLeftValidation(req, res, next) {
 }
 
 export function registerValidation(req, res, next) {
-    const {username} = req.body;
-    if (isUserExists(username)) {
+    const {username, password} = req.body;
+    if (!username || !password) {
         return res.send(`
             <p id="error-info" class="text-sm mb-1 text-red-500" hx-swap-oob="true">
-            Please enter valid username</p>`);
+            Username and Password must be provided</p>`);
+    }else if (isUserExists(username)) {
+        return res.send(`
+            <p id="error-info" class="text-sm mb-1 text-red-500" hx-swap-oob="true">
+            Please enter another username</p>`);
     } else {
         next();
     }
