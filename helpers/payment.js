@@ -1,7 +1,7 @@
 import express from "express";
 import Stripe from "stripe";
 
-import { addNewUser, upgradeUser, deleteUser } from './db/userDb.js';
+import { addNewUser, upgradeUser, deleteUser, deleteUnpaidUsers } from './db/userDb.js';
 import { registerValidation } from './validation.js';
 
 const paymentRouter = express.Router()
@@ -36,6 +36,7 @@ paymentRouter.get('/upgrade/cancel', async (req, res) => {
 
 paymentRouter.post('/upgrade', registerValidation, async (req,res) => {
     const {username, password} = req.body;
+    deleteUnpaidUsers(); //to delete users with no payment keep usernames available
     const user_id = await addNewUser({username, password});
 
     const session = await stripe.checkout.sessions.create({

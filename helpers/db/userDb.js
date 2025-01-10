@@ -22,6 +22,13 @@ export function deleteUser(uid) {
     query.run(uid);
 }
 
+export function deleteUnpaidUsers() {
+    const query = db.prepare(`
+        DELETE FROM users WHERE premium = 0;
+        `);
+    query.run();
+}
+
 export async function addNewUser(user) {
     const user_id = crypto.randomBytes(6).toString('hex');
     const salt = crypto.randomBytes(16).toString('hex');
